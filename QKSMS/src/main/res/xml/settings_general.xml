@@ -121,7 +121,9 @@
             android:layout="@layout/list_item_preference"
             android:summary="@string/pref_blocked_conversations_summary"
             android:title="@string/pref_blocked_conversations"
-            android:widgetLayout="@layout/view_switch" />
+            android:widgetLayout="@layout/view_switch"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
         <Preference
             android:defaultValue="false"
             android:dependency="pref_key_blocked_enabled"
@@ -129,6 +131,13 @@
             android:layout="@layout/list_item_preference"
             android:summary="@string/pref_block_future_summary"
             android:title="@string/pref_block_future" />
+        <Preference
+            android:defaultValue="false"
+            android:dependency="pref_key_blocked_enabled"
+            android:key="pref_key_block_future_ex"
+            android:layout="@layout/list_item_preference"
+            android:summary="@string/pref_block_future_text_summary"
+            android:title="@string/pref_block_future_text" />
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="pref_key_should_i_answer"

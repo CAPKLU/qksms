@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.telephony.SmsMessage;
 import android.util.Log;
 import com.moez.QKSMS.common.BlockedConversationHelper;
+import com.moez.QKSMS.common.BlockRegularExpression;
 import com.moez.QKSMS.common.ConversationPrefsHelper;
 import com.moez.QKSMS.common.utils.PackageUtils;
 import com.moez.QKSMS.data.Message;
@@ -104,6 +105,9 @@ public class MessagingReceiver extends BroadcastReceiver {
         // The user has set messages from this address to be blocked, but we at the time there weren't any
         // messages from them already in the database, so we couldn't block any thread URI. Now that we have one,
         // we can block it, so that the conversation list adapter knows to ignore this thread in the main list
+        if(BlockRegularExpression.isFutureBlocked(mPrefs,mBody)) {
+            BlockedConversationHelper.blockFutureConversation(mPrefs,mAddress);
+        }
         if (BlockedConversationHelper.isFutureBlocked(mPrefs, mAddress)) {
             BlockedConversationHelper.unblockFutureConversation(mPrefs, mAddress);
             BlockedConversationHelper.blockConversation(mPrefs, message.getThreadId());

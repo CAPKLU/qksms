@@ -48,6 +48,7 @@ import com.moez.QKSMS.transaction.SmsHelper;
 import com.moez.QKSMS.ui.ThemeManager;
 import com.moez.QKSMS.ui.base.QKActivity;
 import com.moez.QKSMS.ui.dialog.BlockedNumberDialog;
+import com.moez.QKSMS.ui.dialog.BlockMSMDialog;
 import com.moez.QKSMS.ui.dialog.BubblePreferenceDialog;
 import com.moez.QKSMS.ui.dialog.QKDialog;
 import com.moez.QKSMS.ui.dialog.mms.MMSSetupFragment;
@@ -114,6 +115,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     public static final String BLOCKED_ENABLED = "pref_key_blocked_enabled";
     public static final String BLOCKED_SENDERS = "pref_key_blocked_senders";
     public static final String BLOCKED_FUTURE = "pref_key_block_future";
+    public static final String BLOCKED_FUTURE_TEXT = "pref_key_block_future_ex";
     public static final String SHOULD_I_ANSWER = "pref_key_should_i_answer";
     public static final String MOBILE_ONLY = "pref_key_mobile_only";
     public static final String COMPOSE_GROUP = "pref_key_compose_group";
@@ -584,6 +586,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
                 break;
             case BLOCKED_FUTURE:
                 BlockedNumberDialog.showDialog(mContext);
+                break;
+            case BLOCKED_FUTURE_TEXT:
+                BlockMSMDialog.showDialog(mContext);
                 break;
             case SHOULD_I_ANSWER:
                 final String packageName = "org.mistergroup.muzutozvednout";

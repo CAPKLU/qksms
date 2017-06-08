@@ -49,7 +49,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-public class NotificationManager {
+public class  NotificationManager {
     private static final String TAG = "NotificationManager";
 
     private static final int NOTIFICATION_ID_QUICKCOMPOSE = 4516;
@@ -382,7 +382,7 @@ public class NotificationManager {
     }
 
     /**
-     * Cancels the notification for the given ID.
+     * Cancels the notification for the given  ID.
      */
     public static void dismiss(Context context, int id) {
         // Cancel the notification for this ID.
