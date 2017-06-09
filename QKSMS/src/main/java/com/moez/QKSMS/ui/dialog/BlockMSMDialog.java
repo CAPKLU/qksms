@@ -19,17 +19,21 @@ import java.util.Set;
  */
 
 public class BlockMSMDialog {
+/*
     private static final BlockMSMDialog ourInstance = new BlockMSMDialog();
 
     public static BlockMSMDialog getInstance() {
         return ourInstance;
     }
+*/
 
     private BlockMSMDialog() {
     }
 
     public static void showDialog(final QKActivity context) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        final QKEditText editText = new QKEditText(context);
+        final QKEditText editadd = new QKEditText(context);
         Set<String> addresses = BlockRegularExpression.getFutureBlockedConversations(prefs);
 
         new QKDialog()
@@ -40,7 +44,7 @@ public class BlockMSMDialog {
                     public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                         new QKDialog()
                                 .setContext(context)
-                                .setTitle(R.string.title_unblock_address)
+                                .setTitle(R.string.title_unblock_text)
                                 .setMessage(((TextView) view).getText().toString())
                                 .setPositiveButton(R.string.yes, new View.OnClickListener() {
                                     @Override
@@ -52,24 +56,33 @@ public class BlockMSMDialog {
                                 .show();
                     }
                 })
-                .setPositiveButton(R.string.add, new View.OnClickListener() {
+                .setPositiveButton("Add address",new View.OnClickListener(){
                     @Override
-                    public void onClick(View v) {
-                        final QKEditText editText = new QKEditText(context);
+                    public void onClick(View v){
                         new QKDialog()
                                 .setContext(context)
-                                .setTitle(R.string.title_block_text)
-                                .setCustomView(editText)
+                                .setTitle(R.string.title_block_address)
+                                .setCustomView(editadd)
                                 .setPositiveButton(R.string.add, new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        if (editText.getText().length() > 0) {
-                                            BlockRegularExpression.blockFutureConversation(prefs, editText.getText().toString());
-                                        }
-                                    }
-                                })
-                                .setNegativeButton(R.string.cancel, null)
-                                .show();
+                            @Override
+                            public void onClick(View v) {
+                                new QKDialog()
+                                        .setContext(context)
+                                        .setTitle(R.string.title_block_text)
+                                        .setCustomView(editText)
+                                        .setPositiveButton(R.string.add, new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                if (editText.getText().length() > 0||editadd.getText().length() > 0) {
+                                                    BlockRegularExpression.blockFutureConversation(prefs, editadd.getText().toString()
+                                                            , editText.getText().toString());
+                                                }
+                                            }
+                                        })
+                                        .setNegativeButton(R.string.cancel, null)
+                                        .show();
+                            }
+                        }).show();
                     }
                 })
                 .setNegativeButton(R.string.cancel, null)
