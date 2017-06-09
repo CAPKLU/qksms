@@ -56,7 +56,7 @@ public class BlockMSMDialog {
                                 .show();
                     }
                 })
-                .setPositiveButton("Add address",new View.OnClickListener(){
+                .setPositiveButton(R.string.add,new View.OnClickListener(){
                     @Override
                     public void onClick(View v){
                         new QKDialog()

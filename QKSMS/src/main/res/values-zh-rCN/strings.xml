@@ -171,10 +171,12 @@
   <string name="pref_delete_old_messages_read_summary">Automatically delete read messages after %s days</string>
   <string name="pref_yappy">集成Yappy</string>
   <string name="pref_endlessjabber_summary">启用对Yappy的完整支持</string>
-  <string name="pref_blocked_conversations">Blocked conversations</string>
+  <string name="pref_blocked_conversations">拦截会话</string>
   <string name="pref_blocked_conversations_summary">Long-press on a conversation and block to move to blocked inbox and stop notifications</string>
   <string name="pref_block_future">Block future messages</string>
   <string name="pref_block_future_summary">Add additional phone numbers to block</string>
+  <string name="pref_block_future_rule">拦截规则（JAVA正则）</string>
+  <string name="pref_block_future_rule_summary">添加拦截规则</string>
   <string name="pref_should_i_answer">Should I Answer? Integration</string>
   <string name="pref_should_i_answer_summary">Automatically delete incoming messages from numbers which are blocked through Should I Answer?</string>
   <string name="pref_mobile_only">手机号码</string>
@@ -303,6 +305,8 @@
   <string name="title_qk_responses">快捷回应</string>
   <string name="title_block_address">拦截号码</string>
   <string name="title_unblock_address">解除拦截号码</string>
+  <string name="title_block_text">根据正文拦截</string>
+  <string name="title_unblock_rule">解除拦截规则</string>
   <string name="title_conversations_selected">已选择 %s</string>
   <string name="title_palette">Palette</string>
   <string name="title_rgb">RGB</string>
@@ -334,7 +338,7 @@
   <!--Dialog title for asking if a user wants to delete all failed messages-->
   <string name="delete_all_failed">删除发送失败的消息</string>
   <!--CDialog title for asking if a user wants to delete a conversation-->
-  <string name="delete_confirmation">你确定要删除（%s)）条会话？</string>
+  <string name="delete_confirmation">你确定要删除（%s）条会话？</string>
   <!--CDialog title for asking if a user wants to delete all failed messages-->
   <string name="delete_all_failed_confirmation">Are you sure you would like to delete failed messages from (%s) conversations?</string>
   <!--(Unused) Dialog title shown if APNs have not been set-->
@@ -616,8 +620,8 @@
   <string name="menu_mute_conversation">会话静音</string>
   <!--Menu option to mute conversation-->
   <string name="menu_unmute_conversation">取消会话静音</string>
-  <string name="menu_block_conversations">Block conversations</string>
-  <string name="menu_unblock_conversations">Unblock conversations</string>
+  <string name="menu_block_conversations">拦截会话</string>
+  <string name="menu_unblock_conversations">取消拦截</string>
   <string name="menu_messages">消息</string>
   <string name="menu_blocked">已拦截</string>
   <string name="menu_blocked_conversations">已拦截 （%s 条新消息）</string>

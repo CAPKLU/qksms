@@ -106,10 +106,12 @@ public class MessagingReceiver extends BroadcastReceiver {
         // messages from them already in the database, so we couldn't block any thread URI. Now that we have one,
         // we can block it, so that the conversation list adapter knows to ignore this thread in the main list
         if(BlockRegularExpression.isFutureBlocked(mPrefs,mAddress,mBody)) {
-            BlockedConversationHelper.blockFutureConversation(mPrefs,mAddress);
+            if (!BlockedConversationHelper.isFutureBlocked(mPrefs, mAddress)) {
+                BlockedConversationHelper.blockFutureConversation(mPrefs, mAddress);
+            }
         }
         if (BlockedConversationHelper.isFutureBlocked(mPrefs, mAddress)) {
-            BlockedConversationHelper.unblockFutureConversation(mPrefs, mAddress);
+//            BlockedConversationHelper.unblockFutureConversation(mPrefs, mAddress);
             BlockedConversationHelper.blockConversation(mPrefs, message.getThreadId());
             message.markSeen();
             BlockedConversationHelper.FutureBlockedConversationObservable.getInstance().futureBlockedConversationReceived();
