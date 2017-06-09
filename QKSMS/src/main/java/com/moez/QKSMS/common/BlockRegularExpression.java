@@ -48,13 +48,13 @@ public class BlockRegularExpression {
                 e.printStackTrace();
                 return false;
             }
-            if (stext == "" && stext == "") {
-                if (Pattern.matches(saddress, address) && Pattern.matches(stext,text)) {
+            if (saddress.length() <= 0 || stext.length() <= 0) {
+                if (Pattern.matches(saddress, address) || Pattern.matches(stext,text)) {
                     return true;
                 }
             }
             else
-                if (Pattern.matches(saddress,address) || Pattern.matches(stext,text)) {
+                if (Pattern.matches(saddress,address) && Pattern.matches(stext,text)) {
                     return true;
             }
         }
