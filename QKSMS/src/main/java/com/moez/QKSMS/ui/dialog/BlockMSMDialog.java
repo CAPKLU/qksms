@@ -38,13 +38,13 @@ public class BlockMSMDialog {
 
         new QKDialog()
                 .setContext(context)
-                .setTitle(R.string.pref_block_future_text)
+                .setTitle(R.string.pref_block_future_rule)
                 .setItems(addresses.toArray(new String[addresses.size()]), new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                         new QKDialog()
                                 .setContext(context)
-                                .setTitle(R.string.title_unblock_text)
+                                .setTitle(R.string.title_unblock_rule)
                                 .setMessage(((TextView) view).getText().toString())
                                 .setPositiveButton(R.string.yes, new View.OnClickListener() {
                                     @Override

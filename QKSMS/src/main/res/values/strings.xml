@@ -182,8 +182,8 @@
     <string name="pref_blocked_conversations_summary">Long-press on a conversation and block to move to blocked inbox and stop notifications</string>
     <string name="pref_block_future">Block future messages</string>
     <string name="pref_block_future_summary">Add additional phone numbers to block</string>
-    <string name="pref_block_future_text">Block by text</string>
-    <string name="pref_block_future_text_summary">Add blocked text</string>
+    <string name="pref_block_future_rule">Block rule</string>
+    <string name="pref_block_future_rule_summary">Add blocked rule</string>
     <string name="pref_should_i_answer">Should I Answer? Integration</string>
     <string name="pref_should_i_answer_summary">Automatically delete incoming messages from numbers which are blocked through Should I Answer?</string>
     <string name="pref_mobile_only">Mobile numbers</string>
@@ -322,7 +322,7 @@
     <string name="title_block_address">Block number</string>
     <string name="title_block_text">Block world</string>
     <string name="title_unblock_address">Unblock number</string>
-    <string name="title_unblock_text">Unblock text</string>
+    <string name="title_unblock_rule">Unblock rule</string>
     <string name="title_conversations_selected">%s selected</string>
     <string name="title_palette">Palette</string>
     <string name="title_rgb">RGB</string>

@@ -19,22 +19,22 @@ import java.util.regex.Pattern;
 public class BlockRegularExpression {
 
     public static void blockFutureConversation(SharedPreferences prefs, String address, String text) {
-        Set<String> idStrings = prefs.getStringSet(SettingsFragment.BLOCKED_FUTURE_TEXT, new HashSet<String>());
+        Set<String> idStrings = prefs.getStringSet(SettingsFragment.BLOCKED_FUTURE_RULE, new HashSet<String>());
         JSONArray mrule = new JSONArray();
         mrule.put(address);
         mrule.put(text);
         idStrings.add(mrule.toString());
-        prefs.edit().putStringSet(SettingsFragment.BLOCKED_FUTURE_TEXT, idStrings).apply();
+        prefs.edit().putStringSet(SettingsFragment.BLOCKED_FUTURE_RULE, idStrings).apply();
     }
 
     public static void unblockFutureConversation(SharedPreferences prefs, String address) {
-        Set<String> idStrings2 = prefs.getStringSet(SettingsFragment.BLOCKED_FUTURE_TEXT, new HashSet<String>());
+        Set<String> idStrings2 = prefs.getStringSet(SettingsFragment.BLOCKED_FUTURE_RULE, new HashSet<String>());
         idStrings2.remove(address);
-        prefs.edit().putStringSet(SettingsFragment.BLOCKED_FUTURE_TEXT, idStrings2).apply();
+        prefs.edit().putStringSet(SettingsFragment.BLOCKED_FUTURE_RULE, idStrings2).apply();
     }
 
     public static Set<String> getFutureBlockedConversations(SharedPreferences prefs) {
-        return prefs.getStringSet(SettingsFragment.BLOCKED_FUTURE_TEXT, new HashSet<String>());
+        return prefs.getStringSet(SettingsFragment.BLOCKED_FUTURE_RULE, new HashSet<String>());
     }
 
     public static boolean isFutureBlocked(SharedPreferences prefs, String address, String text) {
