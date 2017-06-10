@@ -283,7 +283,7 @@ public class MessageListFragment extends QKFragment implements ActivityLauncher,
      * Note: This will have no effect if the context has not been initialized yet.
      */
     private void onOpenConversation() {
-        new LoadConversationTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null);
+        new LoadConversationTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
     }
 
     private void setTitle() {

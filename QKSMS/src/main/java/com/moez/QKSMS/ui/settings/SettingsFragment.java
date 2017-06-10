@@ -645,7 +645,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
                 MMSSetupFragment.contactSupport(getActivity());
                 break;
             case CHANGELOG:
-                DialogHelper.showChangelog(mContext);
+//                DialogHelper.showChangelog(mContext);
                 break;
             case THANKS:
                 new QKDialog()
