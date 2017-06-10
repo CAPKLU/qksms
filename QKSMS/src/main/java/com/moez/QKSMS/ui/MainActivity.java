@@ -29,7 +29,7 @@ import com.google.android.mms.pdu_alt.PduHeaders;
 import com.moez.QKSMS.R;
 import com.moez.QKSMS.common.DonationManager;
 import com.moez.QKSMS.common.LiveViewManager;
-import com.moez.QKSMS.common.QKRateSnack;
+//import com.moez.QKSMS.common.QKRateSnack;
 import com.moez.QKSMS.common.google.DraftCache;
 import com.moez.QKSMS.common.utils.MessageUtils;
 import com.moez.QKSMS.data.Conversation;
@@ -103,9 +103,9 @@ public class MainActivity extends QKActivity {
         });
 
         //Adds a small/non intrusive snackbar that asks the user to rate the app
-        SnackEngage.from(this).withSnack(new QKRateSnack().withDuration(BaseSnack.DURATION_LONG))
+/*        SnackEngage.from(this).withSnack(new QKRateSnack().withDuration(BaseSnack.DURATION_LONG))
                 .build().engageWhenAppropriate();
-
+*/
         DeleteOldMessagesService.setupAutoDeleteAlarm(this);
     }
 
